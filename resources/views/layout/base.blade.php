@@ -19,7 +19,7 @@ Website: http://www.devothniel.com/
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-    
+
 </head>
 <!-- END: Head -->
 
