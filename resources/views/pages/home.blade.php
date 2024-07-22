@@ -36,15 +36,26 @@
     </div>
   </nav>
   @if (session('success'))
-  <div class="bg-red-500 text-white p-4 rounded mt-3 mb-3 absolute top-[140px] left-5 right-5">
-      {{ session('success') }}
-  </div>
-@endif
+    <div id="success-alert" class="alert alert-success">
+        {{ session('success') }}
+    </div>
+  @endif
+
   <div class="container mt-5">
     <h1>Bienvenue sur VotreSite</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nihil deserunt distinctio laborum ullam modi excepturi blanditiis optio explicabo dolores asperiores hic, fugiat atque aliquid at laboriosam illum dignissimos iusto.</p>
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const successAlert = document.getElementById('success-alert');
+        if (successAlert) {
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 5000); // 5000 ms = 5 seconds
+        }
+    });
+</script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -17,7 +17,12 @@ class AuthController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return to_route('home');
+
+             // Récupérer le nom de l'utilisateur
+            $userName = Auth::user()->name;
+
+            // Rediriger vers la page d'accueil avec un message de succès
+            return redirect()->route('home')->with('success', 'Bonjour ' . $userName . ', vous êtes maintenant connecté a votre espace.');
         }
         return back()->with([
             'error' => 'Identifiant ou mot de passe incorrect'
