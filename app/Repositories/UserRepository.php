@@ -48,10 +48,10 @@ class UserRepository implements UserRepositoryInterface
 
         $user = User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'identifiant' => $data['identifiant'],
             'password' => Hash::make($data['password']),
             'photo' => $photoPath,
-            'email_verified_at' => now(),
+            'identifiant_verified_at' => now(),
             'remember_token' => Str::random(10),
             'active' => 1,
             'gender' => $data['gender'],
@@ -81,7 +81,7 @@ class UserRepository implements UserRepositoryInterface
 
         $user->update([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'identifiant' => $data['identifiant'],
             'gender' => $data['gender'],
             'photo' => $photoPath,
         ]);

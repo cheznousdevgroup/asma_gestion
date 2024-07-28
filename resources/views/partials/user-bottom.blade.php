@@ -5,8 +5,10 @@
                             <div class="absolute isHidden top-[10rem] right-[12px] md:top-[6rem]   md:right-[3rem] z-40 w-[300px] h-72 p-2 w-12 rounded-md bg-sky-900 text-white flex flex-col justify-between"
                                 id="user-menu">
                                 <div>
-                                    <h5 class="font-bold text-lg">Nom du l'utilisateur</h5>
-                                    <h6 class="font-medium text-gray-300">Role</h6>
+                                    <h5 class="font-bold text-lg">{{ auth()->user()->name }}</h5>
+                                    @foreach(auth()->user()->roles as $role)
+                                    <h6 class="font-medium text-gray-300">{{ $role->name }}</h6>
+                                    @endforeach
                                 </div>
                                 <div>
                                     <ul>
