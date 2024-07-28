@@ -3,7 +3,7 @@
     <h5 class="text-xl font-medium mb-6">Gestion des employés</h5>
     <!-- header -->
     <div class="md:flex items-center justify-between">
-        <a class="bg-sky-900 p-3 md:p-4 rounded-lg md:rounded-[15px] text-slate-100 text-sm my-4" href="">
+        <a class="bg-sky-900 p-3 md:p-4 rounded-lg md:rounded-[15px] text-slate-100 text-sm my-4" href="{{ route('add-users-rules') }}">
             <span class="">Ajouter un employé</span>
         </a>
         <div class="border bg-white p-2 flex items-center rounded-[15px] mt-4 w-72">

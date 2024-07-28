@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('identifiant')->unique();
             $table->timestamp('identifiant_verified_at')->nullable();
             $table->string('password');
+            $table->string('photo')->nullable();
+            $table->string('gender');
+            $table->integer('active');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

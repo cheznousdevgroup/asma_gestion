@@ -20,7 +20,7 @@ class UserService
 
         $validator = Validator::make($data, [
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
+            'identifiant' => 'required|string|unique:users,identifiant',
             'password' => 'required|string|min:8',
             'roles' => 'required|array|exists:roles,name',
             'gender' => 'required|in:male,female',
@@ -31,7 +31,7 @@ class UserService
             return ['errors' => $validator->errors()];
         }
 
-        return $this->userRepository->createUser($data);
+        return $this->userRepository->create($data);
     }
 
     public function updateUser(User $user, array $data)
@@ -48,6 +48,6 @@ class UserService
             return ['errors' => $validator->errors()];
         }
 
-        return $this->userRepository->updateUser($user, $data);
+        return $this->userRepository->update($user, $data);
     }
 }
