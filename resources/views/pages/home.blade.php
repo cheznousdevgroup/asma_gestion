@@ -50,6 +50,7 @@
                         @include('partials.produit')
 
                         @include('partials.stock')
+
                     </div>
                 </div>
             </div>
