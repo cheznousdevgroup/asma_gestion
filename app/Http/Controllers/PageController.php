@@ -30,6 +30,7 @@ class PageController extends Controller
     }
     public function home(){
         $users = User::all();
+        
         return view('pages.home', compact('users'));
     }
 
@@ -46,11 +47,11 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function addUserRules()
-    {
-        $roles = Role::all();
-        return view('pages.add-users-rules', compact('roles'));
-    }
+    // public function addUserRules()
+    // {
+    //     $roles = Role::all();
+    //     return view('pages.add-users-rules', compact('roles'));
+    // }
 
     /**
      * Show specified view.
@@ -58,10 +59,10 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function editUserRules($id)
-    {
-        $user = $this->userRepository->getById($id);
-        $roles = Role::all();
-        return view('pages.edit-users-rules', compact('user','roles'));
-    }
+    // public function editUserRules($id)
+    // {
+    //     $user = $this->userRepository->getById($id);
+    //     $roles = Role::all();
+    //     return view('pages.edit-users-rules', compact('user','roles'));
+    // }
 }
